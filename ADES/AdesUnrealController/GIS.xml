@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GIS>
+  <NodeProp lat="0,0.04,N" lon="0,0.00,W" rule="1"/>
+  <NodeProp lat="0,0.11,N" lon="0,0.00,W" rule="13" type="pre" matching="0,0.12,N:0,0.00,W"/>
+  <NodeProp lat="0,0.11,N" lon="0,0.00,E" rule="13" type="pre" matching="0,0.12,N:0,0.00,E"/>
+  <NodeProp lat="0,0.12,N" lon="0,0.02,W" rule="13" type="post" matching="0,0.12,N:0,0.00,W"/>
+</GIS>

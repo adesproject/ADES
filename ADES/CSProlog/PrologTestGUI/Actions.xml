@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Facts>
+    <Vision_System>
+      <Fact>sign_detected(no_turn_left)</Fact>
+      <Fact>sign_detected(no_turn_right)</Fact>
+      <Fact>sign_detected(no_uturn)</Fact>
+      <Fact>sign_detected(no_enter)</Fact>
+      <Fact>sign_detected(no_overtake)</Fact>
+      <Fact>sign_detected(speed_limit,30)</Fact>
+      <Fact>sign_detected(speed_limit,50)</Fact>
+      <Fact>sign_detected(speed_limit,90)</Fact>
+      <Fact>sign_detected(speed_limit,0)</Fact>
+      <Fact>lane_detection(lane_marking_left,continuous)</Fact>
+      <Fact>lane_detection(lane_marking_left,broken)</Fact>
+      <Fact>lane_detection(lane_marking_right,continuous)</Fact>
+      <Fact>lane_detection(lane_marking_right,broken)</Fact>
+    </Vision_System>
+    <RFID_System>
+      <Fact>rfid_detected(pre,no_turn_left)</Fact>
+      <Fact>rfid_detected(pre,no_turn_right)</Fact>
+      <Fact>rfid_detected(pre,no_uturn)</Fact>
+      <Fact>rfid_detected(pre,wrong_way)</Fact>
+      <Fact>rfid_detected(post,no_turn_left)</Fact>
+      <Fact>rfid_detected(post,no_turn_right)</Fact>
+      <Fact>rfid_detected(post,no_uturn)</Fact>
+      <Fact>rfid_detected(post,wrong_way)</Fact>
+      <Fact>rfid_detected(speed_limit,30)</Fact>
+      <Fact>rfid_detected(speed_limit,50)</Fact>
+      <Fact>rfid_detected(speed_limit,90)</Fact>
+      <Fact>rfid_detected(speed_limit,0)</Fact>
+      <Fact>rfid_detected(pre,light_red)</Fact>
+      <Fact>rfid_detected(post,light_red)</Fact>
+      <Fact>rfid_detected(no_overtake)</Fact>
+    </RFID_System>
+    <GPS_System>
+      <Fact>gps_node_property(emergency_lane)</Fact>
+      <Fact>gps_node_property(traffic_lights)</Fact>
+      <Fact>gps_node_property(no_overtake)</Fact>
+      <Fact>gps_node_property(speed_limit,30)</Fact>
+      <Fact>gps_node_property(speed_limit,50)</Fact>
+      <Fact>gps_node_property(speed_limit,90)</Fact>
+    </GPS_System>
+    <Other>
+      <Fact>velocity_exceeds(0)</Fact>
+      <Fact>velocity_exceeds(30)</Fact>
+      <Fact>velocity_exceeds(50)</Fact>
+      <Fact>velocity_exceeds(90)</Fact>
+    </Other>
+  </Facts>
+  <Predicates>
+    <Predicate>violation(V,A,P) :- sign_detected(V),rfid_detected(pre,V),rfid_detected(post,V),A is "N/A",prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- sign_detected(no_enter),rfid_detected(pre,wrong_way),rfid_detected(post,wrong_way),A is "wrong_way",V is "no_enter",prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- velocity_exceeds(S),rfid_detected(V,L),sign_detected(V,L),gps_node_property(V,L),S>L,atom_chars(S,L1),append(L1,[95],L2),atom_chars(L,L3),append(L2,L3,L4),atom_chars(A,L4),prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- sign_detected(no_overtake),rfid_detected(no_overtake),gps_node_property(no_overtake),lane_detection(lane_marking_right,continuous),lane_detection(lane_marking_left,continuous),A is "N/A",V is "no_overtake",prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- gps_node_property(emergency_lane),lane_detection(lane_marking_left,continuous),velocity_exceeds(X),X>0,A is "N/A",V is "emg_lane",prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- rfid_detected(pre,light_red),rfid_detected(post,light_red),gps_node_property(traffic_lights),A is "N/A",V is "red_light",prob(P)</Predicate>
+  </Predicates>
+  <Queries>
+    <Query>violation(V,A,P)</Query>
+  </Queries>
+</Actions>
+

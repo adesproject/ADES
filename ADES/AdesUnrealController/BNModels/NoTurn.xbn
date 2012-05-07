@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<ANALYSISNOTEBOOK NAME="Notebook.bndefault" ROOT="bndefault">
+  <BNMODEL NAME="bndefault"><STATICPROPERTIES><FORMAT>MSR DTAS XML</FORMAT>
+        <VERSION>1.0</VERSION>
+        <CREATOR>Microsoft Research DTAS</CREATOR>
+        </STATICPROPERTIES>
+      <DYNAMICPROPERTIES><PROPERTYTYPE NAME="DTASDG_Notes" TYPE="stringarray"><COMMENT>Notes on the diagram</COMMENT>
+          </PROPERTYTYPE>
+        <PROPERTYTYPE NAME="MS_Addins" TYPE="stringarray"/>
+        <PROPERTYTYPE NAME="MS_Asym" TYPE="string"><COMMENT>Asymmetric assessment information stored as a string</COMMENT>
+          </PROPERTYTYPE>
+        <PROPERTY NAME="MS_Asym"><PROPVALUE></PROPVALUE>
+          </PROPERTY>
+        </DYNAMICPROPERTIES>
+      <VARIABLES><VAR NAME="Post_GPS_Node_Property" TYPE="discrete" XPOS="-15475" YPOS="10035"><FULLNAME>Post_GPS_Node_Property</FULLNAME>
+          <STATENAME>Post_No_Turn_Left</STATENAME>
+          <STATENAME>Post_No_Turn_Right</STATENAME>
+          <STATENAME>Post_No_U_Turn</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Post_RFID_Detected" TYPE="discrete" XPOS="-25617" YPOS="10015"><FULLNAME>Post_RFID_Detected</FULLNAME>
+          <STATENAME>Post_No_Turn_Left</STATENAME>
+          <STATENAME>Post_No_Turn_Right</STATENAME>
+          <STATENAME>Post_No_U_Turn</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Pre_GPS_Node_Property" TYPE="discrete" XPOS="-15525" YPOS="6010"><FULLNAME>Pre_GPS_Node_Property</FULLNAME>
+          <STATENAME>Pre_No_Turn_Left</STATENAME>
+          <STATENAME>Pre_No_Turn_Right</STATENAME>
+          <STATENAME>Pre_No_U_Turn</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Pre_RFID_Detected" TYPE="discrete" XPOS="-25571" YPOS="5856"><FULLNAME>Pre_RFID_Detected</FULLNAME>
+          <STATENAME>Pre_No_Turn_Left</STATENAME>
+          <STATENAME>Pre_No_Turn_Right</STATENAME>
+          <STATENAME>Pre_No_U_Turn</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Sign_Detected" TYPE="discrete" XPOS="-20502" YPOS="7873"><FULLNAME>Sign_Detected</FULLNAME>
+          <STATENAME>No_Turn_Left</STATENAME>
+          <STATENAME>No_Turn_Right</STATENAME>
+          <STATENAME>No_U_Turn</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Violation" TYPE="discrete" XPOS="-20510" YPOS="12633"><FULLNAME>Violation</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        </VARIABLES>
+      <STRUCTURE><ARC PARENT="Pre_GPS_Node_Property" CHILD="Post_GPS_Node_Property"/>
+        <ARC PARENT="Pre_RFID_Detected" CHILD="Post_RFID_Detected"/>
+        <ARC PARENT="Sign_Detected" CHILD="Violation"/>
+        <ARC PARENT="Post_RFID_Detected" CHILD="Violation"/>
+        <ARC PARENT="Post_GPS_Node_Property" CHILD="Violation"/>
+        </STRUCTURE>
+      <DISTRIBUTIONS><DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Pre_GPS_Node_Property"/>
+            </CONDSET>
+          <PRIVATE NAME="Post_GPS_Node_Property"/>
+          <DPIS><DPI INDEXES="0 ">1 0 0 0 </DPI>
+            <DPI INDEXES="1 ">0 1 0 0 </DPI>
+            <DPI INDEXES="2 ">0 0 1 0 </DPI>
+            <DPI INDEXES="3 ">0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Pre_RFID_Detected"/>
+            </CONDSET>
+          <PRIVATE NAME="Post_RFID_Detected"/>
+          <DPIS><DPI INDEXES="0 ">1 0 0 0 </DPI>
+            <DPI INDEXES="1 ">0 1 0 0 </DPI>
+            <DPI INDEXES="2 ">0 0 1 0 </DPI>
+            <DPI INDEXES="3 ">0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Pre_GPS_Node_Property"/>
+          <DPIS><DPI>0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Pre_RFID_Detected"/>
+          <DPIS><DPI>0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Sign_Detected"/>
+          <DPIS><DPI>0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Sign_Detected"/>
+            <CONDELEM NAME="Post_RFID_Detected"/>
+            <CONDELEM NAME="Post_GPS_Node_Property"/>
+            </CONDSET>
+          <PRIVATE NAME="Violation"/>
+          <DPIS><DPI INDEXES="0 0 0 ">0.95 0.05 </DPI>
+            <DPI INDEXES="0 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 1 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 1 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 1 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 1 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 2 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 2 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 2 2 ">0.9 0.1 </DPI>
+            <DPI INDEXES="0 2 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 3 0 ">0 1 </DPI>
+            <DPI INDEXES="0 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 3 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 1 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 1 1 ">0.95 0.05 </DPI>
+            <DPI INDEXES="1 1 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 1 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 2 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 2 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 2 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 2 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 0 0 ">0.9 0.1 </DPI>
+            <DPI INDEXES="2 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 1 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 1 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 1 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 1 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 2 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 2 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 2 2 ">0.95 0.05 </DPI>
+            <DPI INDEXES="2 2 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 1 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 1 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 1 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 1 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 2 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 2 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 2 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 2 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 3 ">0.1 0.9 </DPI>
+            </DPIS>
+          </DIST>
+        </DISTRIBUTIONS>
+      </BNMODEL>
+    </ANALYSISNOTEBOOK>

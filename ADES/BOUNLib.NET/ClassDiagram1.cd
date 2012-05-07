@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BOUNLib.Messages.GenericMessage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAACAAAAAAAAAAgAAAAAAAAEAAAAAEAAAg=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.Messages.UDPMessage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAACIAkAACAAAAgAAAAABAEIAAQBAAAAAg=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.Messages.VisionMessage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAgAACACEIAgAACAoAgAAoACBEAEIAAAAAAg=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.Messages.TextMessage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAACAAAAAAAAAAgAAAAAAAAEAQAAAAgAAg=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.Messaging.MsgInitiator" Collapsed="true">
+    <Position X="1.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAgAAAAAAAAAAAgAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Messaging.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BOUNLib.Messaging.MsgConsumer" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAQAAAAABEABAAAAAAAA=</HashCode>
+      <FileName>Messaging.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BOUNLib.Messaging.MsgService" Collapsed="true">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAQAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Messaging.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BOUNLib.Messaging.BasicMsgService" Collapsed="true">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Messaging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Messaging.DispatchMsgService" Collapsed="true">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Messaging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Messaging.MessageFlow" Collapsed="true">
+    <Position X="1.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAEAAIAQQCAAAAAAAA=</HashCode>
+      <FileName>Messaging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.PanelDisplayProcessor" Collapsed="true">
+    <Position X="1.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="BOUNLib.Messaging.MsgConsumer" ManuallyRouted="true">
+      <Path>
+        <Point X="5" Y="1.062" />
+        <Point X="5" Y="2.596" />
+        <Point X="2" Y="2.596" />
+        <Point X="2" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.AForgeProcessor" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.TextMsgDisplayProcessor" Collapsed="true">
+    <Position X="3.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.HistogramProcessor" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAABAAgACAAAAAAABACAAAAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.LaneDetectorProcessor" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQQAOBAAwAEAIgEAECAAAEQREABAEAAAEAEEII=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.CircularSignDetectorProcessor" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="BOUNLib.Messaging.MsgConsumer" ManuallyRouted="true">
+      <Path>
+        <Point X="5" Y="1.062" />
+        <Point X="5" Y="3.596" />
+        <Point X="8" Y="3.596" />
+        <Point X="8" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CAAAABAAEIgBQEAAAAAABAAQAAAAAAxLABABCQAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.TriangularSignDetectorProcessor" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAABAgEIgBQEAAAAAAAAAQAAAAAAxLAAABCQBAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.HoughLineProcessor" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQQAKAAAgAEAAAEAEIAAAEAQEABAGAAAAAEEAI=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.AutoBrightnessProcessor" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="BOUNLib.Messaging.MsgConsumer" ManuallyRouted="true">
+      <Path>
+        <Point X="5" Y="1.062" />
+        <Point X="5" Y="1.375" />
+        <Point X="4" Y="1.375" />
+        <Point X="4" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAgAAAACABAAAAAAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.SVM_SURFProcessor" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAgAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAIAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.NN_Processor" Collapsed="true">
+    <Position X="1.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAgAAAAAAAAAAAAAAAAAAAAAAABAAAAIAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Processors.NN_SURFProcessor" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAgAAAAAAAEAAAAAAAAAAAAAAABBAAAAAAAAAA=</HashCode>
+      <FileName>Processors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.Sources.FileVisionSource" Collapsed="true">
+    <Position X="1.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAgBAgCAAAAAgAABABCAAAAAgAAAAACAIAY2gAAA=</HashCode>
+      <FileName>Sources.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BOUNLib.Sources.DeviceVisionSource" Collapsed="true">
+    <Position X="3.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAgBAACAAAAAgAABABCAAAAAgAAAAACAIEY2gAAA=</HashCode>
+      <FileName>Sources.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BOUNLib.Sources.BitmapMemoryVisionSource" Collapsed="true">
+    <Position X="5.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAQAEAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sources.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.NET.Toolbox.LDA" Collapsed="true">
+    <Position X="7.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Toolbox\LDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.NET.Toolbox.NNTrain" Collapsed="true">
+    <Position X="7.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQgAAAAAggCAAAAAAQAAQgAAAAIAAAAgAACAA=</HashCode>
+      <FileName>Toolbox\NNTrain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.NET.Toolbox.SURF" Collapsed="true">
+    <Position X="7.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAACAAIAAAAAAAEAAACAYAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Toolbox\SURF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.NET.Toolbox.SVMTrain" Collapsed="true">
+    <Position X="7.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Toolbox\SVMTrain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.UDPServices.UDPAddress" Collapsed="true">
+    <Position X="3.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAEAAAABAAAAAAAAAAAAgAAAAIA=</HashCode>
+      <FileName>UDPServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.UDPServices.UDPMsgService" Collapsed="true">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAACAIAAAEAAAAAAAIEAAAAAIAQAAAAAAAAQA=</HashCode>
+      <FileName>UDPServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BOUNLib.UDPServices.UDPServer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAgACAAgABBAAAAAAAAAQAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>UDPServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.UDPServices.UDPClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAAAgAAAAAAhAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UDPServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.ES.PrologES" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAYACAAAAAAACIAAAAIAAQAAwA=</HashCode>
+      <FileName>ES.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BOUNLib.ES.BeliefNetworkES" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAgAAAAQADQAAAAAACIAAAAIAAAAAgA=</HashCode>
+      <FileName>ES.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<ANALYSISNOTEBOOK NAME="Notebook.bndefault" ROOT="bndefault">
+  <BNMODEL NAME="bndefault"><STATICPROPERTIES><FORMAT>MSR DTAS XML</FORMAT>
+        <VERSION>1.0</VERSION>
+        <CREATOR>Microsoft Research DTAS</CREATOR>
+        </STATICPROPERTIES>
+      <DYNAMICPROPERTIES><PROPERTYTYPE NAME="DTASDG_Notes" TYPE="stringarray"><COMMENT>Notes on the diagram</COMMENT>
+          </PROPERTYTYPE>
+        <PROPERTYTYPE NAME="MS_Addins" TYPE="stringarray"/>
+        </DYNAMICPROPERTIES>
+      <VARIABLES><VAR NAME="GPS_Node_Property" TYPE="discrete" XPOS="3966" YPOS="528"><FULLNAME>GPS_Node_Property</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        <VAR NAME="Lane_Departure" TYPE="discrete" XPOS="7485" YPOS="2804"><FULLNAME>Lane_Departure</FULLNAME>
+          <STATENAME>Left</STATENAME>
+          <STATENAME>Right</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Sign_Detected" TYPE="discrete" XPOS="448" YPOS="2804"><FULLNAME>Sign_Detected</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        <VAR NAME="Violation" TYPE="discrete" XPOS="3966" YPOS="4643"><FULLNAME>Violation</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        </VARIABLES>
+      <STRUCTURE><ARC PARENT="GPS_Node_Property" CHILD="Violation"/>
+        <ARC PARENT="Lane_Departure" CHILD="Violation"/>
+        <ARC PARENT="Sign_Detected" CHILD="Violation"/>
+        </STRUCTURE>
+      <DISTRIBUTIONS><DIST TYPE="discrete"><PRIVATE NAME="GPS_Node_Property"/>
+          <DPIS/>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Lane_Departure"/>
+          <DPIS><DPI INDEXES="default">0.333333 0.333333 0.333333 </DPI>
+            <DPI>0.5 0.5 0 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Sign_Detected"/>
+          <DPIS/>
+          </DIST>
+        <DIST TYPE="discrete"><CONDSET><CONDELEM NAME="GPS_Node_Property"/>
+            <CONDELEM NAME="Lane_Departure"/>
+            <CONDELEM NAME="Sign_Detected"/>
+            </CONDSET>
+          <PRIVATE NAME="Violation"/>
+          <DPIS><DPI INDEXES="0 0 0 ">0.9 0.1 </DPI>
+            <DPI INDEXES="0 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 1 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 1 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 2 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 2 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 1 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 1 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 2 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 2 1 ">0.1 0.9 </DPI>
+            </DPIS>
+          </DIST>
+        </DISTRIBUTIONS>
+      </BNMODEL>
+    </ANALYSISNOTEBOOK>

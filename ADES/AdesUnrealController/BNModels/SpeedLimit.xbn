@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<ANALYSISNOTEBOOK NAME="Notebook.bndefault" ROOT="bndefault">
+  <BNMODEL NAME="bndefault"><STATICPROPERTIES><FORMAT>MSR DTAS XML</FORMAT>
+        <VERSION>1.0</VERSION>
+        <CREATOR>Microsoft Research DTAS</CREATOR>
+        </STATICPROPERTIES>
+      <DYNAMICPROPERTIES><PROPERTYTYPE NAME="DTASDG_Notes" TYPE="stringarray"><COMMENT>Notes on the diagram</COMMENT>
+          </PROPERTYTYPE>
+        <PROPERTYTYPE NAME="MS_Addins" TYPE="stringarray"/>
+        <PROPERTYTYPE NAME="MS_Asym" TYPE="string"><COMMENT>Asymmetric assessment information stored as a string</COMMENT>
+          </PROPERTYTYPE>
+        <PROPERTY NAME="MS_Asym"><PROPVALUE></PROPVALUE>
+          </PROPERTY>
+        </DYNAMICPROPERTIES>
+      <VARIABLES><VAR NAME="GPS_Node_Property" TYPE="discrete" XPOS="7014" YPOS="12303"><FULLNAME>GPS_Node_Property</FULLNAME>
+          <STATENAME>Limit_30</STATENAME>
+          <STATENAME>Limit_50</STATENAME>
+          <STATENAME>Limit_90</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Sign_Detected" TYPE="discrete" XPOS="3496" YPOS="10028"><FULLNAME>Sign_Detected</FULLNAME>
+          <STATENAME>Limit_30</STATENAME>
+          <STATENAME>Limit_50</STATENAME>
+          <STATENAME>Limit_90</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Vehicle_Speed" TYPE="discrete" XPOS="-23" YPOS="12303"><FULLNAME>Vehicle_Speed</FULLNAME>
+          <STATENAME>Exceed_30</STATENAME>
+          <STATENAME>Exceed_50</STATENAME>
+          <STATENAME>Exceed_90</STATENAME>
+          <STATENAME>None</STATENAME>
+          </VAR>
+        <VAR NAME="Violation" TYPE="discrete" XPOS="3496" YPOS="14143"><FULLNAME>Violation</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        </VARIABLES>
+      <STRUCTURE><ARC PARENT="Sign_Detected" CHILD="Violation"/>
+        <ARC PARENT="Vehicle_Speed" CHILD="Violation"/>
+        <ARC PARENT="GPS_Node_Property" CHILD="Violation"/>
+        </STRUCTURE>
+      <DISTRIBUTIONS><DIST TYPE="discrete"><PRIVATE NAME="GPS_Node_Property"/>
+          <DPIS><DPI>0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Sign_Detected"/>
+          <DPIS><DPI>0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Vehicle_Speed"/>
+          <DPIS><DPI>0 0 0 1 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Sign_Detected"/>
+            <CONDELEM NAME="Vehicle_Speed"/>
+            <CONDELEM NAME="GPS_Node_Property"/>
+            </CONDSET>
+          <PRIVATE NAME="Violation"/>
+          <DPIS><DPI INDEXES="0 0 0 ">0.968 0.032 </DPI>
+            <DPI INDEXES="0 0 1 ">0.628 0.372 </DPI>
+            <DPI INDEXES="0 0 2 ">0.628 0.372 </DPI>
+            <DPI INDEXES="0 0 3 ">0.5 0.5 </DPI>
+            <DPI INDEXES="0 1 0 ">0.957 0.043 </DPI>
+            <DPI INDEXES="0 1 1 ">0.766 0.234 </DPI>
+            <DPI INDEXES="0 1 2 ">0.787 0.213 </DPI>
+            <DPI INDEXES="0 1 3 ">0.511 0.489 </DPI>
+            <DPI INDEXES="0 2 0 ">0.979 0.021 </DPI>
+            <DPI INDEXES="0 2 1 ">0.84 0.16 </DPI>
+            <DPI INDEXES="0 2 2 ">0.84 0.16 </DPI>
+            <DPI INDEXES="0 2 3 ">0.553 0.447 </DPI>
+            <DPI INDEXES="0 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="0 3 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 0 ">0.479 0.521 </DPI>
+            <DPI INDEXES="1 0 1 ">0.085 0.915 </DPI>
+            <DPI INDEXES="1 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 1 0 ">0.479 0.521 </DPI>
+            <DPI INDEXES="1 1 1 ">0.95 0.05 </DPI>
+            <DPI INDEXES="1 1 2 ">0.84 0.16 </DPI>
+            <DPI INDEXES="1 1 3 ">0.479 0.521 </DPI>
+            <DPI INDEXES="1 2 0 ">0.553 0.447 </DPI>
+            <DPI INDEXES="1 2 1 ">0.926 0.074 </DPI>
+            <DPI INDEXES="1 2 2 ">0.97 0.03 </DPI>
+            <DPI INDEXES="1 2 3 ">0.574 0.426 </DPI>
+            <DPI INDEXES="1 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="1 3 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 0 0 ">0.479 0.521 </DPI>
+            <DPI INDEXES="2 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 1 0 ">0.489 0.511 </DPI>
+            <DPI INDEXES="2 1 1 ">0.479 0.521 </DPI>
+            <DPI INDEXES="2 1 2 ">0.894 0.106 </DPI>
+            <DPI INDEXES="2 1 3 ">0.106 0.894 </DPI>
+            <DPI INDEXES="2 2 0 ">0.83 0.17 </DPI>
+            <DPI INDEXES="2 2 1 ">0.883 0.117 </DPI>
+            <DPI INDEXES="2 2 2 ">0.95 0.05 </DPI>
+            <DPI INDEXES="2 2 3 ">0.511 0.489 </DPI>
+            <DPI INDEXES="2 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="2 3 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 0 ">0.479 0.521 </DPI>
+            <DPI INDEXES="3 0 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 0 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 1 0 ">0.479 0.521 </DPI>
+            <DPI INDEXES="3 1 1 ">0.489 0.511 </DPI>
+            <DPI INDEXES="3 1 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 1 3 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 2 0 ">0.457 0.543 </DPI>
+            <DPI INDEXES="3 2 1 ">0.468 0.532 </DPI>
+            <DPI INDEXES="3 2 2 ">0.457 0.543 </DPI>
+            <DPI INDEXES="3 2 3 ">0.106 0.894 </DPI>
+            <DPI INDEXES="3 3 0 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 1 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 2 ">0.1 0.9 </DPI>
+            <DPI INDEXES="3 3 3 ">0.1 0.9 </DPI>
+            </DPIS>
+          </DIST>
+        </DISTRIBUTIONS>
+      </BNMODEL>
+    </ANALYSISNOTEBOOK>

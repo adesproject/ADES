@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Predicates>
+    <Predicate>violation(V,A,P) :- sign_detected(no_overtake),rfid_detected(no_overtake),gps_node_property(no_overtake),lane_departure(left),A is "N/A",V is "no_overtake",prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- rfid_detected(pre,light_red),rfid_detected(post,light_red),gps_node_property(traffic_lights),A is "N/A",V is "red_light",prob(P)</Predicate>
+    <Predicate>violation(V,A,P) :- sign_detected(V),rfid_detected(pre,V),rfid_detected(post,V), gps_node_property(post,V), gps_node_property(pre,V), A is "N/A",prob(P),P>0.8</Predicate>
+    <Predicate>violation(V,A,P) :- gps_node_property(V,L), velocity_exceeds(S),sign_detected(V,L),S>=L,atom_chars(S,L1),append(L1,[95],L2),atom_chars(L,L3),append(L2,L3,L4),atom_chars(A,L4),prob(P),P>0.9</Predicate>
+  </Predicates>
+  <Queries>
+    <Query>violation(V,A,P)</Query>
+  </Queries>
+</Actions>
+
